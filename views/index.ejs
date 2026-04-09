@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Planner</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="map"></div>
+    <section class="route-panel">
+        <div class="route-panel__header">
+            <p class="eyebrow">Route Planner</p>
+            <h1>Build the best route</h1>
+            <p class="route-panel__copy">Enter a starting point and destination to generate a clean route with accurate distance details.</p>
+        </div>
+
+        <form class="route-form" id="route-form">
+            <label class="field">
+                <span>Starting point</span>
+                <input id="start-input" name="start" type="text" placeholder="Search start location" autocomplete="off" />
+            </label>
+
+            <button class="swap-button" id="swap-button" type="button" aria-label="Swap starting point and destination">Swap</button>
+
+            <label class="field">
+                <span>Destination</span>
+                <input id="destination-input" name="destination" type="text" placeholder="Search destination" autocomplete="off" required />
+            </label>
+
+            <div class="route-actions">
+                <button class="primary-button" type="submit">Get Route</button>
+            </div>
+        </form>
+
+        <div class="trip-summary" id="trip-summary">
+            <div>
+                <span class="summary-label">Distance</span>
+                <strong id="distance-value">-</strong>
+            </div>
+        </div>
+    </section>
+
+    <div class="status" id="status">Enter a starting point and destination to build a route.</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
